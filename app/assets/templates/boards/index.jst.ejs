@@ -1,5 +1,7 @@
 <h1>Boards</h1>
 
-<% _(boards).each(function (board) { %>
-  <%= board.escape("title") %>
-<% }) %>
+<ul>
+  <% _(boards).each(function (board) { %>
+    <li><a href="#/board/<%= board.escape('id') %>"><%= board.escape("title") %></a></li>
+  <% }) %>
+</ul>
