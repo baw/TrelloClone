@@ -1,6 +1,6 @@
 /*global TrelloClone, JST */
-TrelloClone.Views.ListShow = Backbone.View.extend({
-  template: JST["lists/show"],
+TrelloClone.Views.ListView = Backbone.View.extend({
+  template: JST["lists/_list"],
   
   initialize: function (options) {
     this.boardId = options.boardId;
