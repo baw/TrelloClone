@@ -1,0 +1,16 @@
+.listContainer {
+  overflow-x: scroll;
+  width: 100%;
+}
+
+.list {
+  width: 300px;
+  display: inline-block;
+  background-color: lightgray;
+  height: 600px;
+  border-radius: 6px;
+  padding:0 6px;
+  margin-top:10px;
+  margin-bottom: 10px;
+  margin-right:30px;
+}
