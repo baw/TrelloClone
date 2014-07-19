@@ -26,7 +26,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
       });
       listView.render();
       
-      view.addSubview(".lists", listView);
+      view.addSubview(".listContainer", listView);
     });
   }
 });
