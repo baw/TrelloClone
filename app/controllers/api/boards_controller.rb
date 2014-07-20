@@ -17,7 +17,7 @@ module Api
     end
 
     def index
-      @boards = current_user.boards
+      @boards = current_user.boards.sort()
       render json: @boards
     end
 
