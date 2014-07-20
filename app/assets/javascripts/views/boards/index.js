@@ -1,5 +1,5 @@
 /*global TrelloClone, JST */
-TrelloClone.Views.BoardsIndex = Backbone.View.extend({
+TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
   template: JST["boards/index"],
   
   initialize: function () {
@@ -12,6 +12,15 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
     });
     this.$el.html(renderContent);
     
+    this.renderAddBoardView();
+    
     return this;
+  },
+  renderAddBoardView: function () {
+    var addBoardView = new TrelloClone.Views.BoardNew({
+      collection: TrelloClone.Collections.boards
+    });
+    
+    this.addSubview(".newBoard", addBoardView);
   }
 });
