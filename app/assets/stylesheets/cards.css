@@ -1,3 +1,10 @@
+.deleteCard {
+  display:none;
+}
+.card:hover .deleteCard {
+  display:inline-block;
+}
+
 .newCard label, .newCard button {
   width:100%;
 }
