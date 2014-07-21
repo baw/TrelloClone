@@ -1,9 +1,21 @@
 /*global TrelloClone, JST */
 TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
   template: JST["boards/index"],
+  events: {
+    "click .deleteBoard": "deleteBoard"
+  },
   
   initialize: function () {
-    this.listenTo(this.collection, "sync", this.render);
+    this.listenTo(this.collection, "sync remove", this.render);
+  },
+  
+  deleteBoard: function (event) {
+    console.log("delete");
+    var $button = $(event.target);
+    var boardId = $button.data("boardid");
+    console.log(boardId);
+    var board = this.collection.getOrFetch(boardId);
+    board.destroy();
   },
   
   render: function () {
@@ -16,6 +28,7 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
     
     return this;
   },
+  
   renderAddBoardView: function () {
     var addBoardView = new TrelloClone.Views.BoardNew({
       collection: TrelloClone.Collections.boards

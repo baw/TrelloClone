@@ -2,7 +2,13 @@
 
 <ul>
   <% _(boards).each(function (board) { %>
-    <li><a href="#/board/<%= board.escape('id') %>"><%= board.escape("title") %></a></li>
+    <li>
+      <a href="#/board/<%= board.escape('id') %>"><%= board.escape("title") %></a>
+      <button data-boardid="<%= board.escape('id') %>"
+              class="btn btn-danger deleteBoard">
+        Delete
+      </button>
+    </li>
   <% }) %>
 </ul>
 
