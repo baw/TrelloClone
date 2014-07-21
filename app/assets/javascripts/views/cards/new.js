@@ -20,6 +20,8 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
       "list_id": this.list.escape("id"),
       "ord": this.list.cards().length
     });
+    
+    $("#cardTitle").val("");
   },
   
   render: function () {
