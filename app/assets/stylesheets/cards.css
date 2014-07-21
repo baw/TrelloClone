@@ -1,3 +1,22 @@
+.cards {
+  list-style:none;
+  padding-left:0;
+}
+
+.cards:empty {
+  height:50px;
+  width:100%;
+  background-color:#fff;
+  border-radius:6px;
+}
+
+.card {
+  background-color:white;
+  border-radius:6px;
+  margin-bottom:6px;
+  padding: 10px 6px;
+}
+
 .deleteCard {
   display:none;
 }
