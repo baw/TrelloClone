@@ -23,6 +23,7 @@ TrelloClone.Views.CardView = Backbone.View.extend({
     });
     
     this.$el.html(renderContent);
+    this.$el.data("cardid", this.model.escape("id"));
     
     return this;
   }
